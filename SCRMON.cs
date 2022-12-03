@@ -1,7 +1,5 @@
 ﻿using System.Diagnostics;
 using System.Drawing;
-using System.Drawing.Imaging;
-using System.Runtime.InteropServices;
 
 namespace SCRMON
 {
@@ -44,7 +42,7 @@ namespace SCRMON
                         {
                             Console.Clear();
                             Console.WriteLine("Alarm Initialised");
-                            IntPtr handle = Process.GetCurrentProcess().MainWindowHandle;
+                            //IntPtr handle = Process.GetCurrentProcess().MainWindowHandle;
                             ConsoleExtension.Hide(); 
 
                             var Runner = CapCom(TSen, BSen, PSen);
