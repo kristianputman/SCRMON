@@ -9,6 +9,7 @@ namespace SCRMON
     {
         static void Main(string[] args)
         {
+            ConsoleExtension.Show();
             Console.Write("Initialising.");
             Task.Delay(1000).Wait();
             Console.Write(".");
@@ -41,6 +42,7 @@ namespace SCRMON
                         int BSen = 0;
                         if (int.TryParse(Console.ReadLine()!, out BSen))
                         {
+                            Console.Clear();
                             Console.WriteLine("Alarm Initialised");
                             IntPtr handle = Process.GetCurrentProcess().MainWindowHandle;
                             ConsoleExtension.Hide(); 
@@ -51,7 +53,9 @@ namespace SCRMON
                             if(Runner.IsCompleted)
                             {
                                 ConsoleExtension.Show();
+                                Console.WriteLine("Alarm Activated: " + DateTime.Now.ToString());
                                 Alarm();
+
                                 
                             }    
 
